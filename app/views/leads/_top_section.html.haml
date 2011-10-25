@@ -3,12 +3,16 @@
     %table
       %tr
         %td
+          .label.top.req #{t :last_name}:
+          = f.text_field :last_name
+        %td= spacer
+        %td
           .label.top.req #{t :first_name}:
           = f.text_field :first_name
         %td= spacer
         %td
-          .label.top.req #{t :last_name}:
-          = f.text_field :last_name
+          .label.top.req #{t :middle_name}:
+          = f.text_field :middle_name
       %tr
         %td
           .label #{t :email}:

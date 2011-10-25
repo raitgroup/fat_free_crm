@@ -126,7 +126,7 @@ var crm = {
     $("account_id").hide();
     $("account_id").disable();
     $("account_name").enable();
-    $("account_name").clear();
+    //$("account_name").clear();
     $("account_name").show();
     if (and_focus) {
       $("account_name").focus();

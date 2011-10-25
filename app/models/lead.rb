@@ -16,7 +16,7 @@
 #------------------------------------------------------------------------------
 
 # == Schema Information
-# Schema version: 27
+# Schema version: 
 #
 # Table name: leads
 #
@@ -26,6 +26,7 @@
 #  assigned_to     :integer(4)
 #  first_name      :string(64)      default(""), not null
 #  last_name       :string(64)      default(""), not null
+#  middle_name     :string(64)      default(""), not null
 #  access          :string(8)       default("Private")
 #  title           :string(64)
 #  company         :string(64)
@@ -153,10 +154,11 @@ class Lead < ActiveRecord::Base
 
   #----------------------------------------------------------------------------
   def full_name(format = nil)
-    if format.nil? || format == "before"
-      "#{self.first_name} #{self.last_name}"
+#    if format.nil? || format == "before"
+    if format == "before"
+      "#{self.first_name} #{self.middle_name} #{self.last_name}"
     else
-      "#{self.last_name}, #{self.first_name}"
+      "#{self.last_name} #{self.first_name} #{self.middle_name}"
     end
   end
   alias :name :full_name

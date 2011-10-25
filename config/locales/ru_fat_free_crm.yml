@@ -65,7 +65,7 @@ ru:
   presentation: Презентация
   trip: Поездка
 
-  overdue: Задержка
+  overdue: Просрочено
   due_asap: Как можно скорее
   due_today: Сегодня
   due_tomorrow: Завтра
@@ -120,6 +120,8 @@ ru:
               missing_first_name: "^Пожалуйста введите имя."
             last_name:
               missing_last_name: "^Пожалуйста введите фамилию."
+            middle_name:
+              missing_middle_name: "^Пожалуйста введите отчество."
             access:
               share_contact: "^Пожалуйста укажите пользователей которым разрешен доступ к данному контакту."
         lead:
@@ -128,6 +130,8 @@ ru:
               missing_first_name: "^Пожалуйста введите имя."
             last_name:
               missing_last_name: "^Пожалуйста введите фамилию."
+            middle_name:
+              missing_middle_name: "^Пожалуйста введите отчество."
             access:
               share_lead: "^Пожалуйста укажите пользователей которым разрешен доступ к данному потенциальному клиенту."
         opportunity:
@@ -211,6 +215,7 @@ ru:
   option_ends_on: дате окончания
   option_first_name: имени
   option_last_name: фамилии
+  option_middle_name: отчества
   option_leads_count: фактическому количеству потенциальных клиентов
   option_long: полном
   option_name: имени
@@ -245,6 +250,7 @@ ru:
   job_title: Должность
   last_name: Фамилия
   login_now_link: Войти!
+  middle_name: Отчество
   mobile: Мобильный
   my_profile: Мой Профиль
   new_password: Новый пароль
@@ -493,7 +499,7 @@ ru:
   subject_campaign: кампанию
   subject_contact: контакт
   subject_lead: наводку
-  subject_opportunity: перспективу
+  subject_opportunity: возможность
   subject_task: задание
 
   # Views -> Common.
@@ -616,11 +622,11 @@ ru:
       many: '%{count} контактов'
       other: '%{count} контакта'
     opportunity:
-      zero: '0 перспектив'
-      one: '1 перспектива'
-      few: '%{count} перспективы'
-      many: '%{count} перспектив'
-      other: '%{count} перспектив'
+      zero: '0 возможностей'
+      one: '1 возможность'
+      few: '%{count} возможностей'
+      many: '%{count} возможностей'
+      other: '%{count} везможностей'
     lead:
       zero: '0 потенциальных клиентов'
       one: '1 потенциальный клиент'

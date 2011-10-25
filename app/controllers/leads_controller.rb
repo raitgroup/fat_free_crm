@@ -164,6 +164,7 @@ class LeadsController < ApplicationController
     @lead = Lead.my.find(params[:id])
     @users = User.except(@current_user)
     @account = Account.new(:user => @current_user, :name => @lead.company, :access => "Lead")
+    @account.name = @lead.full_name
     @accounts = Account.my.order("name")
     @opportunity = Opportunity.new(:user => @current_user, :access => "Lead", :stage => "prospecting", :campaign => @lead.campaign, :source => @lead.source)
     if params[:previous].to_s =~ /(\d+)\z/
