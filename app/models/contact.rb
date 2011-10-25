@@ -103,10 +103,18 @@ class Contact < ActiveRecord::Base
   #----------------------------------------------------------------------------
   def full_name(format = nil)
     #if format.nil? || format == "before"
-    if format == "before"
-      "#{self.first_name} #{self.middle_name} #{self.last_name}"
+    if format.nil? || format == "before"
+      if self.middle_name.empty?
+        "#{self.first_name} #{self.last_name}"
+      else
+        "#{self.first_name} #{self.middle_name} #{self.last_name}"
+      end
     else
-      "#{self.last_name} #{self.first_name} #{self.middle_name}"
+      if self.middle_name.empty?
+        "#{self.last_name}, #{self.middle_name}"
+      else
+        "#{self.last_name} #{self.first_name} #{self.middle_name}"
+      end
     end
   end
   alias :name :full_name

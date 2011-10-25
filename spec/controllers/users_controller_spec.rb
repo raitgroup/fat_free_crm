@@ -127,7 +127,7 @@ describe UsersController do
       it "exposes a newly created user as @user and redirect to profile page" do
         post :create, :user => { :username => @username, :email => @email, :password => @password, :password_confirmation => @password }
         assigns[:user].should == @user
-        flash[:notice].should =~ /welcome/
+        flash[:notice].should =~ /msg_successful_signup/
         response.should redirect_to(profile_path)
       end
 
@@ -136,7 +136,7 @@ describe UsersController do
 
         post :create, :user => { :username => @username, :email => @email, :password => @password, :password_confirmation => @password }
         assigns[:user].should == @user
-        flash[:notice].should =~ /approval/
+        flash[:notice].should =~ /msg_account_created/
         response.should redirect_to(login_path)
       end
 

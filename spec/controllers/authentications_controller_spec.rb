@@ -15,7 +15,7 @@ describe AuthenticationsController do
         it "displays 'must be logged out message' and redirects to login page" do
           delete :destroy
           flash[:notice].should_not == nil
-          flash[:notice].should =~ /^You must be logged in/
+          flash[:notice].should =~ /^msg_login_needed/
           response.should redirect_to(login_path)
         end
 
@@ -36,7 +36,7 @@ describe AuthenticationsController do
         it "displays 'must be logged out message' and redirects to profile page" do
           get :new
           flash[:notice].should_not == nil
-          flash[:notice].should =~ /^You must be logged out/
+          flash[:notice].should =~ /^msg_logout_needed/
           response.should redirect_to(profile_path)
         end
       end
@@ -45,7 +45,7 @@ describe AuthenticationsController do
         it "displays 'must be logged out message' and redirects to profile page" do
           post :create, :authentication => @login
           flash[:notice].should_not == nil
-          flash[:notice].should =~ /^You must be logged out/
+          flash[:notice].should =~ /^msg_logout_needed/
           response.should redirect_to(profile_path)
         end
       end
