@@ -160,7 +160,7 @@ class Contact < ActiveRecord::Base
       :assigned_to => params[:account][:assigned_to],
       :access      => params[:access]
     }
-    %w(first_name last_name title source email alt_email phone mobile blog linkedin facebook twitter skype do_not_call background_info).each do |name|
+    %w(first_name last_name middle_name title source email alt_email phone mobile blog linkedin facebook twitter skype do_not_call background_info).each do |name|
       attributes[name] = model.send(name.intern)
     end
 
